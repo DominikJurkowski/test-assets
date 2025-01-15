@@ -54,3 +54,8 @@ Branch: `feature/src-config-file`
 Description: Here we test if we can include folder locale after the build under the .next folder. Normally this will be not included!?
 NOT WORKING??!!!
 Branch: `feature/next-build-locale`
+
+# Blobs
+Description: Test the vercel blobs solution. Beautiful solution.
+Just install blob, upload file to storage on vercel, add env (blob token), get blobs list and you have your file!!!
+Branch: `feature/blobs`

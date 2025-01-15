@@ -1,3 +1,4 @@
+import { list } from '@vercel/blob';
 import fs from 'fs';
 import path from 'path';
 
@@ -15,14 +16,22 @@ async function getTranslations(locale: string) {
  }
 }
 
-async function getFilePath(locale: string) {
-  return path.join(process.cwd(), 'src', 'locales', locale, 'license.pass');
+// async function getFilePath(locale: string) {
+//   return path.join(process.cwd(), 'src', 'locales', locale, 'license.pass');
+// }
+
+async function getBlobs() {
+  const blobs = await list();
+  return blobs;
 }
 
 export default async function Test() {
   const locale = 'en';
   const transaltions = await getTranslations(locale); // works locally and prod
-  const downloadUrl = await getFilePath(locale); // not working
+  
+  const blobs = await getBlobs();
+  const downloadUrl = blobs.blobs[0].downloadUrl;
+  console.log(blobs);
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
