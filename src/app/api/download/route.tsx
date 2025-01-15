@@ -4,10 +4,8 @@ import path from 'path';
 
 export async function GET() {
 
-  // Path to the requested file
   const filePath = path.join(process.cwd(), 'src', 'locales', 'en', 'license.pass');
 
-  // Check if the file exists
   if (!fs.existsSync(filePath)) {
     return new Response(JSON.stringify({ error: 'File not found' }), {
       status: 404,
@@ -15,7 +13,6 @@ export async function GET() {
     });
   }
 
-  // Read the file
   const fileContents = fs.readFileSync(filePath);
 
   // Serve the file as a download

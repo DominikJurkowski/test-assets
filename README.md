@@ -49,3 +49,8 @@ Branch: `feature/src-directory`
 # Src-config-file branch
 Description: setup folder in the next.config files. It needs to be inside the `api` directory to start working
 Branch: `feature/src-config-file`
+
+# Next-build-locale
+Description: Here we test if we can include folder locale after the build under the .next folder. Normally this will be not included!?
+NOT WORKING??!!!
+Branch: `feature/next-build-locale`
