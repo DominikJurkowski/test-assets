@@ -39,9 +39,13 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## Tests
 
 # Error-asset branch
-Description: Test
+Description: Keep files in the public folder directory
 Branch: `feature/error-asset`
 
 # Src-directory branch
-Description: 
+Description: Move the folder under src directory
 Branch: `feature/src-directory`
+
+# Src-config-file branch
+Description: setup folder in the next.config files. It needs to be inside the `api` directory to start working
+Branch: `feature/src-config-file`
