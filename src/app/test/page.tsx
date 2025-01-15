@@ -2,14 +2,15 @@ import fs from 'fs';
 import path from 'path';
 
 async function getTranslations(locale: string) {
- const filePath = path.join(process.cwd(), 'public', 'locales', locale, 'common.json');
+//  const filePath = path.join(process.cwd(), 'public', 'locales', locale, 'common.json');
+ const filePath = path.join('public/locales/en/common.json');
 
  try {
    const fileContent = await fs.promises.readFile(filePath, 'utf-8');
    return JSON.parse(fileContent);
  } catch (error) {
    console.error(`Error loading translations for locale "${locale}":`, error);
-   return { greeting: 'Error' }; // Fallback value
+   return { greetings: 'Error' }; // Fallback value
  }
 }
 export default async function Test() {
