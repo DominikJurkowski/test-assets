@@ -3,7 +3,7 @@ import path from 'path';
 
 async function getTranslations(locale: string) {
  const filePath = path.join(process.cwd(), 'public', 'locales', locale, 'common.json');
-//  const filePath = path.join('public/locales/en/common.json'); // also working
+//  const filePath = path.join('public/locales/en/common.json'); // also working locally and prod
 
  try {
    const fileContent = await fs.promises.readFile(filePath, 'utf-8');
@@ -14,17 +14,11 @@ async function getTranslations(locale: string) {
  }
 }
 
-// Not working with file path!
-// async function getFilePath() {
-//   const filePath = path.join(process.cwd(), 'public', 'locales', 'en', 'license.pass');
-//   return filePath;
-// }
-
 export default async function Test() {
   const locale = 'en';
-  const transaltions = await getTranslations(locale);
+  const transaltions = await getTranslations(locale); // works locally and prod
 
-  const downloadUrl = `/locales/${locale}/license.pass`;
+  const downloadUrl = `/locales/${locale}/license.pass`; // works locally and prod
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
